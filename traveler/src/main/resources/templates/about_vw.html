@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> About page </title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <style th:inline="css">
+        .h1 {
+          color: red;
+        }
+    </style>
+<!--    <script type="module" th:inline="javascript" th:src="@{/js/app.js}"></script>-->
+</head>
+<body>
+    <div th:insert="/includes/top_nav.html :: navbar_top" class="top-nav-holder"> </div>
+    <div class="sp-30"></div>
+    <div class="container">
+        <div id="about-holder">
+            <h2> Simple Project: Traveller's API: </h2> 
+            <h3> Create API, accepting the following request params: </h3>
+            <pre>
+    [x] Starting Country 
+    [x] Budget per Country (equal for all neighbour countries) 
+    [x] Total Budget 
+    [x] Currency 
+            </pre>
+            <p> 
+            <h3> Result: </h3>
+            <pre>
+    1. The API should calculate how many exact times can the traveller go through
+    all neighbour countries within his total budget.
+
+    2. The API should calculate the budget for each country in their respected currencies.
+    If the exchange rate is missing it should return the amount in the original currency.
+    The potential leftover amount from the total budget should also be returned in the 
+    original currency.
+    
+    <b style="color:#3333cc;"> N.B. </b> My understanding (Ivan) is that the "original currency"
+    should be the currency of the starting country.
+            </pre>
+            </p>
+            <p>
+            <h3> Example: </h3>
+            <pre>
+    Traveller fills in the following request values:
+    [x] Starting country: Bulgaria (BG)
+    [x] Budget per country: 100
+    [x] Total budget: 1200
+    [x] Currency: EUR
+            </pre>
+            </p>
+            <p>
+            <h3> Example Result: </h3>
+            <pre>
+    Bulgaria has 5 neighbour countries (TR, GR, MK, SR, RO) and the 
+    Traveler can travel around them 2 times. 
+    He will have 200 EUR leftover. 
+    For Turkey he will need to buy 1325.30 TL.
+    For North Macedonia he will need to buy 12232.51 MKD end so on.
+            </pre>
+            </p>
+            <p>
+            <h3> Requirements: </h3>
+            <pre>
+    1. Use Java Spring Boot Framework to build the REST API.
+    2. Upload project to Git
+            </pre>
+            </p>
+            <p>
+            <h3> Bonuses: </h3>
+            <pre>
+    1. Secure API with Google Oauth2 Login.
+    2. Implement UI Login form with Google Oauth2
+            </pre>
+            </p>
+        
+        </div>
+    </div>
+    <script type="module" th:inline="javascript" th:src="@{/js/app.js}"></script>
+    <script type="module" th:inline="javascript">
+        function onInit() {
+            api.onInit();
+        }
+        onInit();
+    </script>
+</body>
+</html>
+

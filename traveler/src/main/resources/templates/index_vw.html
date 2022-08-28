@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Landing Page </title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <style th:inline="css">
+        .h1 {
+          color: red;
+        }
+    </style>
+    <!-- <script type="module" th:inline="javascript" th:src="@{/js/app.js}"></script>-->
+</head>
+<body>
+    <div th:insert="/includes/top_nav.html :: navbar_top" class="top-nav-holder"> </div>
+    <div class="sp-30"></div>
+    <div class="container">
+        <div class="border-box-rounded">
+            <ul>
+                <h2> Welcome at my Landing Page! </h2>
+                <h4>If you take a look at the code of this project, you can see: </h4>
+                <li> MVC Web Project Skeleton using Spring (via Spring boot 2) and </li>
+                <li> Basic Login System and simple State Management (should be upgraded ..) </li>
+                <li> Make use of Thymeleaf template engine </li>
+                <li> Using SQLite as embeded DB with Java </li>
+                <li> Dealing with data, stored in json file (reading and writing) with Java </li>
+                <li> AJAX Form handling with Java (Spring) </li>
+                <li> Standard Form handling with Java (Spring) </li>
+                <li> Creating Data Accessor Object (DAO) and Services (java and js Services) </li>
+                <li> Creating Models (Entities) with getters and setters (without make use of setter's validation) </li>
+                <li> Creating Controllers and Views (templates) </li>
+                <li> Each of the DB CRUDs (CREATE, READ, UPDATE, DELETE) concerning database without DB ORM </li>
+                <li> Some usefull javascript techniques: AJAX promises, setCookie, getCookie, redirect, escape, etc. </li>
+            </ul>
+        </div>
+    <script type="module" th:inline="javascript" th:src="@{/js/app.js}"></script>
+    <script type="module" th:inline="javascript">
+        function onInit() {
+            api.onInit();
+        }
+        onInit();
+    </script>
+</body>
+</html>

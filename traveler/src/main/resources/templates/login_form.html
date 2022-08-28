@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+    <!--<script type="module" th:inline="javascript" th:src="@{/js/app.js}"></script>-->
+</head>
+<body>
+    <div th:insert="/includes/top_nav.html :: navbar_top" class="top-nav-holder"> </div>
+    <div class="sp-30"></div>
+    <div class="container">
+<!--        <form action="#" th:action="@{/submit_login}" method="POST" th:object="${user}">-->
+        <form action="#" id="loginForm" method="POST" th:object="${user}">
+            <h3> Login Form </h3>
+    
+            <label>E-mail:</label>
+            <input type="text" th:field="*{email}" />
+    
+            <label>Password:</label>
+            <input type="password" th:field="*{password}" />
+
+            <input type="hidden" name="csrfToken" th:value="${csrfToken}" />
+    
+            <!--<button type="submit"> Login </button>-->
+            <!-- type="button" is to avoid default behaviour of sending GET request -->
+            <button type="button" onclick="api.onSubmitLoginForm()"> Login </button>
+            <button type="reset"> Reset </button>
+    
+        </form>
+    </div>
+
+<!--    <script type="module" th:inline="javascript">-->
+<!--        import { api } from  [[@{/js/api.js}]]-->
+<!--        // DO everything you wish ..-->
+<!--    </script>-->
+    
+    <script type="module" th:inline="javascript" th:src="@{/js/app.js}"></script>
+    <script type="module" th:inline="javascript">
+        function onInit() {
+            api.onInit();
+        }
+        onInit();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<nav th:fragment="navbar_top">
+    <a href="/"> Home </a>
+    <a href="/about"> About </a>
+<!--    <div>-->
+<!--        <span th:if="${session.loginFlag == 'Y'}">-->
+<!--            <a th:href="@{/calculator_form}"> Calculator </a>-->
+<!--        </span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <span th:if="${session.loginFlag == 'Y'}">-->
+<!--            <a href="javascript:void(0)" id="logoutLink" onclick="api.logout()"> Logout </a>-->
+<!--        </span>-->
+<!--        <span th:unless="${session.loginFlag == 'N'}">-->
+<!--            <a th:href="@{/login}"> Login </a>-->
+<!--        </span>-->
+<!--    </div>-->
+
+    <div>
+        <span>
+            <a th:href="@{/calculator_form}" id="calcLink"> Calculator </a>
+        </span>
+    </div>
+    <div>
+        <span>
+            <a th:href="@{/displ_login_form}" id="loginLink"> Login </a>
+        </span>
+    </div>
+    <div>
+        <span>
+            <a href="javascript:void(0)" onclick="api.logout()" id="logoutLink"> Logout </a>
+        </span>
+    </div>
+</nav>
